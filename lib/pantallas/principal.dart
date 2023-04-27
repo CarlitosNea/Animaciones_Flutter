@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_animaciones/figuras/figuras.dart';
+import 'package:proyecto_animaciones/pantallas/pantalla2.dart';
+import 'package:proyecto_animaciones/widgets/navegadortap.dart';
+
 
 
 class PantallaPrincipal extends StatefulWidget {
@@ -24,9 +27,22 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
         ],
         backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: Encabezado(
-        ),
+      body: Stack(
+        children: [
+          Center(
+
+          ),
+          GestureDetector(
+            child: NavTap(),
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=>PantallaDos())
+              );
+            },
+          )
+
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
